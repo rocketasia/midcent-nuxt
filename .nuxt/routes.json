@@ -1,0 +1,30 @@
+[
+  {
+    "name": "blog-author-author",
+    "path": "/blog/author/:author?",
+    "component": "/Users/rocketmedia/Documents/GitHub/midcent-nuxt/pages/blog/author/_author.vue",
+    "chunkName": "pages/blog/author/_author",
+    "_name": "_bfa6c932"
+  },
+  {
+    "name": "blog-tag-tag",
+    "path": "/blog/tag/:tag?",
+    "component": "/Users/rocketmedia/Documents/GitHub/midcent-nuxt/pages/blog/tag/_tag.vue",
+    "chunkName": "pages/blog/tag/_tag",
+    "_name": "_2d0ba731"
+  },
+  {
+    "name": "blog-slug",
+    "path": "/blog/:slug?",
+    "component": "/Users/rocketmedia/Documents/GitHub/midcent-nuxt/pages/blog/_slug.vue",
+    "chunkName": "pages/blog/_slug",
+    "_name": "_744fa559"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/rocketmedia/Documents/GitHub/midcent-nuxt/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_c8c13cf4"
+  }
+]
