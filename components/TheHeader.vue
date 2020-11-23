@@ -1,36 +1,121 @@
 <template>
-  <header class="flex">
-     <div class="relative pt-23 px-4 sm:px-6 lg:px-8">
-        <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
-          <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
-            <div class="flex items-center justify-between w-full md:w-auto">
-              <a href="#">
-                <span class="sr-only">Workflow</span>
-                <img class="h-8 w-auto sm:h-10" src="https://media.mid-centuryonline.com/wp-content/uploads/20200226165746/MidcenturyOnline-600x48-1.png">
-              </a>
-              <div class="-mr-2 flex items-center md:hidden">
-                <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="main-menu" aria-haspopup="true">
-                  <span class="sr-only">Open main menu</span>
-                  <!-- Heroicon name: menu -->
-                  <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-          <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
-            <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Tables</a>
+  <nav :class="headerClassList" class="fixed w-full z-30 top-0">
+    <div
+      class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2"
+    >
+      <div class="pl-4 flex items-">
+        <img src="https://media.mid-centuryonline.com/wp-content/uploads/20200226165746/MidcenturyOnline-600x48-1.png" />
+      </div>
+      <div class="block lg:hidden pr-4">
+        <button
+          class="flex items-center p-1 text-orange-800 hover:text-gray-900"
+          @click.prevent.stop="onToggleClick"
+        >
+          <svg
+            class="fill-current h-6 w-6"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+          </svg>
+        </button>
+      </div>
 
-            <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Seating</a>
-
-            <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Storage</a>
-
-            <a href="#" class="font-medium text-gray-500 hover:text-gray-900">Objects</a>
-
-           
-          </div>
-        </nav></div>
-   </br><AppSearchInput/>
-  </header>
+      <div
+        :class="navContentClassList"
+        class="w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg:mt-0 bg-white lg:bg-transparent text-black p-4 lg:p-0 z-20"
+      >
+        <ul class="list-reset lg:flex justify-end flex-1 items-center">
+          <li class="mr-3">
+            <a
+              class="inline-block py-2 px-4 text-black font-bold no-underline"
+              href="#"
+              >Tables</a
+            >
+          </li>
+          <li class="mr-3">
+            <a
+              class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+              href="#"
+              >Seating</a
+            >
+          </li>
+          <li class="mr-3">
+            <a
+              class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+              href="#"
+              >Storage</a
+            >
+          </li>
+           <li class="mr-3">
+            <a
+              class="inline-block text-black no-underline hover:text-gray-800 hover:text-underline py-2 px-4"
+              href="#"
+              >Objects</a
+            >
+          </li>
+        </ul>
+        
+        
+      </div>
+    </div>
+    </appsearchinput>
+    <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
+  </nav>
 </template>
+
+<script>
+import Logo from '@/components/Logo'
+
+export default {
+  name: 'TheHeader',
+  components: {
+    logo: Logo
+  },
+  data() {
+    return {
+      scrollY: 0,
+      isOpen: false
+    }
+  },
+  computed: {
+    isSticky() {
+      return this.scrollY > 10
+    },
+    headerClassList() {
+      return this.isSticky ? 'bg-white shadow' : ''
+    },
+    navActionClassList() {
+      return this.isSticky ? 'gradient text-white' : 'bg-white text-gray-800'
+    },
+    navContentClassList() {
+      let classList = this.isSticky ? 'bg-white' : 'bg-gray-100'
+      if (!this.isOpen) {
+        classList += ` hidden`
+      }
+      return classList
+    }
+  },
+  methods: {
+    onClick() {
+      this.isOpen = false
+    },
+    onScroll() {
+      this.scrollY = window.scrollY
+    },
+    onToggleClick() {
+      this.isOpen = !this.isOpen
+    }
+  },
+  mounted() {
+    this.scrollY = window.scrollY
+    document.addEventListener('click', this.onClick)
+    document.addEventListener('scroll', this.onScroll)
+  },
+  beforeDestroy() {
+    document.removeEventListener('click', this.onClick, true)
+    document.removeEventListener('scroll', this.onScroll, true)
+  }
+}
+</script>
