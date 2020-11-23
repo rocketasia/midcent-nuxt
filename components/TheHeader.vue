@@ -3,7 +3,7 @@
     <div
       class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2"
     >
-      <div class="pl-4 flex items-">
+      <div class="pl-1 flex items-">
         <img src="https://media.mid-centuryonline.com/wp-content/uploads/20200226165746/MidcenturyOnline-600x48-1.png" />
       </div>
       <div class="block lg:hidden pr-4">
