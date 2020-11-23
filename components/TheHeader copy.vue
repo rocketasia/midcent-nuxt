@@ -1,5 +1,5 @@
 <template>
- <nav class="bg-white shadow">
+  <nav :class="headerClassList" class="fixed w-full z-30 top-0">
     <div
       class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2"
     >

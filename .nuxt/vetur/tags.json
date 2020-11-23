@@ -35,6 +35,12 @@
   "LazyLogo": {
     "description": "Auto imported from components/Logo.vue"
   },
+  "TheHeaderCopy": {
+    "description": "Auto imported from components/TheHeader copy.vue"
+  },
+  "LazyTheHeaderCopy": {
+    "description": "Auto imported from components/TheHeader copy.vue"
+  },
   "TheHeader": {
     "description": "Auto imported from components/TheHeader.vue"
   },
