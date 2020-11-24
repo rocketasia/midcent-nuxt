@@ -13,7 +13,7 @@ front_matter_path: "/store/media"
 use_front_matter_path: true
 file_template: ":filename:"
 build:
-  preview_output_directory: public
+  preview_output_directory: "/"
   install_dependencies_command: nuxt generate
   preview_docker_image: forestryio/node:12
   mount_path: "/srv"
