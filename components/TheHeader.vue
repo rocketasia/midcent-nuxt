@@ -57,10 +57,10 @@
           </li>
         </ul>
         
-        
+        <AppSearchInput />
       </div>
     </div>
-    </appsearchinput>
+    
     <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
   </nav>
 </template>
