@@ -1,0 +1,14 @@
+---
+label: Blog post
+hide_body: false
+fields:
+- name: dsfsdf
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  description: sds
+  label: dfsadf
