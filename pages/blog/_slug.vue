@@ -10,7 +10,7 @@
       />
       <div class="overlay"></div>
       <div class="absolute top-32 left-32 text-white">
-        <NuxtLink to="/"><Logo /></NuxtLink>
+        
         <div class="mt-16 -mb-3 flex uppercase text-sm">
           <p class="mr-3">
             {{ formatDate(article.updatedAt) }}
@@ -29,20 +29,15 @@
           </NuxtLink>
         </span>
       </div>
-      <div class="flex absolute top-3rem right-3rem">
+      <div class="flex absolute top-3rem left-3rem">
         <NuxtLink
           to="/"
-          class="mr-8 self-center text-white font-bold hover:underline"
+          class="pr-100px self-center text-white font-bold hover:underline"
         >
           All articles
         </NuxtLink>
-        <a
-          href="https://nuxtjs.org/blog/creating-blog-with-nuxt-content"
-          class="mr-8 self-center text-white font-bold hover:underline"
-        >
-          Tutorial
-        </a>
-        <AppSearchInput />
+       
+        
       </div>
     </div>
     <div
