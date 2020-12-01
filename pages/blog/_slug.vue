@@ -29,21 +29,7 @@
           </NuxtLink>
         </span>
       </div>
-      <div class="flex absolute top-3rem right-3rem">
-        <NuxtLink
-          to="/"
-          class="mr-8 self-center text-white font-bold hover:underline"
-        >
-          All articles
-        </NuxtLink>
-        <a
-          href="https://nuxtjs.org/blog/creating-blog-with-nuxt-content"
-          class="mr-8 self-center text-white font-bold hover:underline"
-        >
-          Tutorial
-        </a>
-        <AppSearchInput />
-      </div>
+       <PrevNext :prev="prev" :next="next" class="mt-8" />
     </div>
     <div
       class="relative xs:py-8 xs:px-8 lg:py-32 lg:px-16 lg:w-1/2 xs:w-full h-full overflow-y-scroll markdown-body post-right custom-scroll"
