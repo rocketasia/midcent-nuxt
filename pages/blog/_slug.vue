@@ -1,4 +1,5 @@
 <template>
+
   <article
     class="flex lg:h-screen w-screen lg:overflow-hidden xs:flex-col lg:flex-row"
   >
